@@ -1,0 +1,33 @@
+﻿global using System.Threading;
+global using System.Threading.Tasks;
+global using AutoMapper;
+global using MediatR;
+global using System;
+global using System.ComponentModel.DataAnnotations;
+global using FluentValidation;
+global using System.Collections.Generic;
+global using System.ComponentModel;
+global using System.Linq;
+global using System.Reflection;
+global using FluentValidation.Results;
+global using Microsoft.AspNetCore.Http;
+global using Newtonsoft.Json;
+global using Microsoft.EntityFrameworkCore;
+
+// Application
+global using BG.CampusLife.Application.Identity.DTOs;
+global using BG.CampusLife.Application.Locations.DTOs;
+global using BG.CampusLife.Application.MarketPlace.DTOs;
+global using BG.CampusLife.Application.Categories.DTOs;
+global using BG.CampusLife.Application.Common.Mappings;
+global using BG.CampusLife.Application.Calendars.DTOs;
+global using BG.CampusLife.Application.Posts.DTOs;
+global using BG.CampusLife.Application.Universities.DTOs;
+global using BG.CampusLife.Application.Common;
+global using BG.CampusLife.Application.Common.Exceptions;
+global using BG.CampusLife.Application.Interfaces.Repositories;
+global using BG.CampusLife.Application.Interfaces.Services;
+global using BG.CampusLife.Application.Interfaces;
+global using BG.CampusLife.Domain.Enums;
+global using BG.CampusLife.Domain.Entities;
+global using ValidationException = BG.CampusLife.Application.Common.Exceptions.ValidationException;

@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  bg.campuslife.presentation:
+    image: ${DOCKER_REGISTRY-}bgcampuslifepresentation
+    build:
+      context: .
+      dockerfile: BG.CampusLife.Presentation/Dockerfile
+    
+  sqldb:
+    image: mcr.microsoft.com/mssql/server

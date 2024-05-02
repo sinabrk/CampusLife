@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+    sqldb:
+        container_name: campus_db
+        restart: always
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "1234"
+            ACCEPT_EULA: "Y"
+
+    bg.campuslife.presentation:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=https://+:443;http://+:80
+            - "ConnectionStrings:CampusContext=Server=sqldb;Database=CampusLifeTest;User Id=sa;Password=1234"
+        ports:
+            - "80"
+            - "443"
+        volumes:
+            - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+            - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+        depends_on:
+            - sqldb

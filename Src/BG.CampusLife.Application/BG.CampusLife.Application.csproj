@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
+    <PackageReference Include="FluentValidation" Version="10.1.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.4" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.1.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.5" />
+    <PackageReference Include="NLog" Version="4.7.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BG.CampusLife.Domain\BG.CampusLife.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Users\Commands" />
+    <Folder Include="Users\Queries" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Identity\Commands\UpdateProfile\UpdateProfileValidation.cs" />
+    <Compile Remove="Posts\Queries\GetPost\ById\GetPostByIdValidtion.cs" />
+    <Compile Remove="Posts\Queries\GetPost\ById\GetPostByIdHandler.cs" />
+    <Compile Remove="Posts\Queries\GetPost\ByMessage\GetPostByMessageValidation.cs" />
+    <Compile Remove="Posts\Queries\GetPost\ByMessage\GetPostByMessageHandler.cs" />
+  </ItemGroup>
+
+</Project>
